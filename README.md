@@ -1,4 +1,5 @@
 ### Hi there 👋
+  [![HitCount](https://hits.dwyl.com/Mansishrivastava/Mansishrivastava/Mansishrivastava.svg?style=flat-square)](http://hits.dwyl.com/Mansishrivastava/Mansishrivastava/Mansishrivastava)
 
 <!--
 **Mansishrivastava/Mansishrivastava** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
