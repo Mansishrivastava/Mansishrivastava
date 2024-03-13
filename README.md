@@ -20,6 +20,9 @@ I'm a front-end enthusiast passionate about creating beautiful web experiences. 
 - 😄 Pronouns: She/Her
 - ⚡ Fun fact: I'm a big foodie and love experimenting with new dishes in the kitchen!
 
+# Recent Activity :zap:
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
 
 
 ### 📈 My GitHub Stats:
