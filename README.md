@@ -22,6 +22,7 @@ I'm a front-end enthusiast passionate about creating beautiful web experiences. 
 
 # Recent Activity :zap:
 <!--START_SECTION:activity-->
+
 <!--END_SECTION:activity-->
 
 
