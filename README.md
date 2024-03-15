@@ -48,13 +48,6 @@ I'm a front-end enthusiast passionate about creating beautiful web experiences. 
 
 ![Mansishrivastava github contributions](https://github-readme-stats.vercel.app/api?username=Mansishrivastava&show_icons=true&count_private=true&theme=radical)
 
-### 🔧 More Statistics:
-
-- Total Public Repositories: 20
-- Total Private Repositories: 5
-- Total Commits: 1500
-- Followers: 500
-- Following: 300
 
 ### 📅 Recent Activity:
 
