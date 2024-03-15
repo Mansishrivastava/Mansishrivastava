@@ -40,13 +40,13 @@ async function fetchCommits(owner, repo) {
 async function updateCommits(owner, repo) {
     try {
         const commits = await fetchCommits(owner, repo);
-        const commitList = commits.map(commit => `- ${commit.commit.message}`).join('\n');
+        const commitList = commits.map(commit => `- [${commit.commit.message}](${commit.html_url})`).join('\n');
 
         const readmePath = 'README.md';
         let readmeContent = fs.readFileSync(readmePath, 'utf-8');
 
         // Replace placeholder with the actual commit list
-        readmeContent = readmeContent.replace(/<!--START_SECTION:commits-->(.|[\r\n])*<!--END_SECTION:commits-->/, `<!--START_SECTION:commits-->\n${commitList}\n<!--END_SECTION:commits-->`);
+        readmeContent = readmeContent.replace(/<!--START_SECTION:commits-->[\s\S]*<!--END_SECTION:commits-->/g, `<!--START_SECTION:commits-->\n${commitList}\n<!--END_SECTION:commits-->`);
 
         fs.writeFileSync(readmePath, readmeContent, 'utf-8');
 
@@ -55,6 +55,7 @@ async function updateCommits(owner, repo) {
         console.error(`Error fetching commits from ${owner}/${repo}:`, error.message);
     }
 }
+
 
 // Call the function with the provided owner and repository name
 const owner = 'Mansishrivastava'; // Replace with your GitHub username or organization name
