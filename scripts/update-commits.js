@@ -1,19 +1,46 @@
 const fs = require('fs');
-const { Octokit } = require('@octokit/rest');
+const https = require('https');
 
-const octokit = new Octokit();
+async function fetchCommits(owner, repo) {
+    return new Promise((resolve, reject) => {
+        const options = {
+            hostname: 'api.github.com',
+            path: `/repos/${owner}/${repo}/commits`,
+            method: 'GET',
+            headers: {
+                'User-Agent': 'Node.js' // Required by GitHub API
+            }
+        };
+
+        const req = https.request(options, res => {
+            let data = '';
+
+            res.on('data', chunk => {
+                data += chunk;
+            });
+
+            res.on('end', () => {
+                if (res.statusCode === 200) {
+                    const commits = JSON.parse(data);
+                    resolve(commits);
+                } else {
+                    reject(new Error(`Failed to fetch commits: ${res.statusCode}`));
+                }
+            });
+        });
+
+        req.on('error', error => {
+            reject(error);
+        });
+
+        req.end();
+    });
+}
 
 async function updateCommits(owner, repo) {
     try {
-        const { data: commits } = await octokit.repos.listCommits({
-            owner,
-            repo,
-            per_page: 5 // Number of commits to fetch
-        });
-
-        const commitList = commits.map(commit => {
-            return `- ${commit.commit.message}`;
-        }).join('\n');
+        const commits = await fetchCommits(owner, repo);
+        const commitList = commits.map(commit => `- ${commit.commit.message}`).join('\n');
 
         const readmePath = 'README.md';
         let readmeContent = fs.readFileSync(readmePath, 'utf-8');
@@ -29,5 +56,8 @@ async function updateCommits(owner, repo) {
     }
 }
 
-// Call the function with the owner and repository name
-updateCommits('Mansishrivastava', 'typescript-practice');
+// Call the function with the provided owner and repository name
+const owner = 'Mansishrivastava'; // Replace with your GitHub username or organization name
+const repo = 'typescript-practice'; // Replace with the name of your repository
+
+updateCommits(owner, repo);
