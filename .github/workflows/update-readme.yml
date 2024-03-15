@@ -21,4 +21,4 @@ jobs:
         run: npm install
 
       - name: Run Update Script
-        run: node scripts/update-commits.js  # Adjust the path to your update script
+        run: node ./update-commits.js  # Adjust the path to your update script
