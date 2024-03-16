@@ -65,3 +65,7 @@ const owner = 'Mansishrivastava'; // Replace with your GitHub username or organi
 const repo = 'typescript-practice'; // Replace with the name of your repository
 
 updateCommits(owner, repo);
+// Call the function with the new repository's owner and repository name
+const owner2 = 'Mansishrivastava'; // Replace with your GitHub username or organization name
+const repo2 = 'java-practice'; // Replace with the name of your repository
+updateCommits(owner2, repo2);
