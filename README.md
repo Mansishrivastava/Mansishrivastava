@@ -24,11 +24,9 @@
 I'm a front-end enthusiast passionate about creating beautiful web experiences. I enjoy working with HTML and CSS to craft stunning interfaces and use Angular for building dynamic web applications. Currently, I'm exploring Remix for its exciting new approaches to web development.
 
 - 🔭 I’m currently working on building a responsive e-commerce website with Angular.
-- 🌱 I’m currently learning the latest CSS Grid techniques to enhance my layout skills.
 - 👯 I’m looking to collaborate on open-source projects related to web accessibility.
 - 💬 Ask me about creating pixel-perfect designs and Angular development.
 - 📫 How to reach me: mansishrivastava12@gmail.com
-- 😄 Pronouns: She/Her
 - ⚡ Fun fact: I'm a big foodie and love experimenting with new dishes in the kitchen!
 
 
